@@ -1,13 +1,14 @@
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to bottom, #fce4ec, #fff); /* Matches original pink but softer gradient */
-    color: #512da8; /* A nice deep purple, like a night sky */
-    line-height: 1.7;
-    padding: 30px;
+    background: radial-gradient(circle, #fce4ec, #fff); /* Radial gradient background */
+    color: #4a144b; /* Deep plum */
+    line-height: 1.8; /* Slightly increased line height */
+    padding: 40px;
     margin: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow-x: hidden; /* Prevents horizontal scroll on animations */
 }
 
 main {
@@ -15,84 +16,110 @@ main {
 }
 
 h1 {
-    font-family: 'Dancing Script', cursive; /* Elegant, like her dancing */
-    font-size: 3em; /* Make it more prominent */
+    font-family: 'Caveat', cursive; /* Playful, handwritten font */
+    font-size: 3.5em; /* Even larger heading */
     text-align: center;
-    margin-bottom: 40px;
-    color: #e91e63; /* A vibrant pink/magenta */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 50px;
+    color: #d81b60; /* Vibrant pink */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    animation: pulse 3s infinite alternate; /* Pulse animation */
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
 }
 
 ul {
     list-style-type: none;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Wider items */
-    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly wider */
+    grid-gap: 40px;
     justify-content: center;
 }
 
 li {
-    background: #fff;
-    padding: 25px; /* More padding */
-    border-radius: 15px; /* Even rounder */
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
-    border: 1px solid #ffb6c1; /* Subtle light pink border */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    position: relative; /* For the pseudo-element heart */
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 30px;
+    border-radius: 20px; /* More rounded */
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.15);
+    border: none;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    position: relative;
     overflow: hidden;
+    backdrop-filter: blur(5px); /* Adds a subtle blur to the background */
 }
 
 li:nth-child(even) {
-    transform: rotate(0.7deg); /* Very subtle */
+    transform: rotate(1deg);
 }
 
 li:nth-child(odd) {
-    transform: rotate(-0.3deg); /* Even more subtle */
+    transform: rotate(-1deg);
 }
 
 li:hover {
-    transform: scale(1.02) rotate(2deg);
-    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.15);
+    transform: scale(1.04) rotate(3deg);
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Heart before each item */
+/* Heart with gradient and animation */
 li::before {
     content: "♥";
-    color: #f06292; /* A softer pink/rose for the heart */
-    position: absolute; /* Position the heart absolutely */
-    top: 10px; /* Adjust as needed */
-    left: 15px; /* Adjust as needed */
-    font-size: 1.5em;
-    animation: heartbeat 1.5s infinite;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 1.8em;
+    background: linear-gradient(to right, #f06292, #e91e63); /* Gradient heart */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: beat 1.2s linear infinite; /* Faster beat */
+    z-index: 1; /* Ensure the heart is above other content */
 }
 
-@keyframes heartbeat {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); } /* Slightly less pronounced heartbeat */
-    100% { transform: scale(1); }
+@keyframes beat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); opacity: 1;}
+    75%{opacity: 0.5;}
 }
 
 footer {
     text-align: center;
-    padding: 20px 0;
+    padding: 30px 0;
     color: #7b1fa2;
     margin-top: auto;
+    font-style: italic; /* Italicized footer */
 }
 
-/* Media Queries (unchanged, but important) */
+/* Add a subtle wave animation to the background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%; /* Make it wider than the screen */
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23fce4ec' fill-opacity='0.3' d='M0,160L48,138.7C96,117,192,74,288,80C384,85,480,139,576,160C672,181,768,171,864,192C960,213,1056,267,1152,261.3C1248,256,1344,192,1392,160L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    animation: wave 10s linear infinite alternate;
+    transform: rotate(-5deg); /* Slightly tilt the wave */
+    z-index: -1; /* Place it behind the body content */
+}
+
+@keyframes wave {
+    0% { transform: translateX(0) rotate(-5deg); }
+    100% { transform: translateX(-50%) rotate(-5deg); }
+}
+
+/* Media Queries */
+@media (max-width: 768px) { /* Adjusted breakpoint */
+    h1 { font-size: 2.5em; }
+    ul { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    li{padding: 20px;}
+}
+
 @media (max-width: 600px) {
-    body {
-        font-size: 1em;
-        padding: 20px;
-    }
-
-    h1 {
-        font-size: 2em;
-    }
-
-    ul {
-        grid-template-columns: 1fr;
-        grid-gap: 20px;
-    }
+    h1 { font-size: 2em; }
+    ul { grid-template-columns: 1fr; }
+    li{padding: 15px;}
 }
