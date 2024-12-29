@@ -332,7 +332,6 @@ h1 {
 @media (max-width: 768px) {
    header {
        padding: 0.5rem;
-       min-height: auto;
    }
 
    h1 {
@@ -344,34 +343,34 @@ h1 {
    
    .container {
        padding: 0 15px;
-       margin: 0.3rem auto;
+       margin: 0.5rem auto;
    }
    
    .list-item {
-       padding: 2.5rem 2.5rem 2.5rem 3rem;
-       font-size: 1.8rem;
-       margin: 0 20px;
-       line-height: 1.9;
+       padding: 1.8rem 1.8rem 1.8rem 2.5rem;
+       font-size: 1.1rem; /* Increase text size slightly */
+       line-height: 1.8;  /* Improve line spacing */
        font-weight: 500;
+       margin: 0 10px; /* Add a bit more margin for spacing */
    }
    
    .list-item::before {
-       left: -22px;
-       width: 50px;
-       height: 50px;
-       font-size: 1.6rem;
+       left: -20px;
+       width: 45px;
+       height: 45px;
+       font-size: 1.3rem; /* Slightly bigger badges */
    }
    
    .love-list {
-       gap: 2.5rem;
+       gap: 1.8rem; /* Increase spacing between items */
    }
    
    .list-item:nth-child(3n)::after,
    .list-item:nth-child(3n+1)::after,
    .list-item:nth-child(3n+2)::after {
-       font-size: 1.6rem;
-       right: 15px;
-       bottom: 15px;
+       font-size: 1.8rem;
+       right: 12px;
+       bottom: 12px;
    }
 }
 
@@ -382,7 +381,17 @@ h1 {
    }
 
    .list-item {
-       font-size: 1.7rem;
-       padding: 2.2rem 2.2rem 2.2rem 2.8rem;
+       font-size: 1rem; /* Increase font size for very small screens */
+       padding: 2rem 2rem 2rem 2.5rem;
+   }
+
+   .list-item::before {
+       width: 42px;
+       height: 42px;
+       font-size: 1.2rem;
+   }
+
+   .list-item::after {
+       font-size: 1.5rem;
    }
 }
