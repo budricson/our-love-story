@@ -71,18 +71,18 @@ h1 {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
+    gap: 15px;
+    padding: 10px;
 }
 
 .content img {
-    width: 250px;
-    height: 300px;
+    width: 280px;
+    height: 330px;
     object-fit: cover;
     border: 10px solid white;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     transform: rotate(-2deg);
-    margin: 20px;
+    margin: 10px;
     padding-bottom: 30px;
     background: white;
     transition: transform 0.3s ease;
@@ -123,7 +123,12 @@ h1 {
     }
 
     .content img {
-        width: 200px;
-        height: 250px;
+        width: 260px;
+        height: 310px;
+        margin: 5px;
+    }
+
+    .polaroid-container {
+        gap: 10px;
     }
 }
