@@ -59,7 +59,7 @@ body {
 h1 {
     color: white;
     font-family: 'Dancing Script', cursive;
-    font-size: 8rem;
+    font-size: 10rem;
     margin: 0;
     text-shadow: 3px 3px 6px rgba(0,0,0,0.1);
     transform: rotate(-2deg);
@@ -73,22 +73,20 @@ h1 {
 
 .love-list {
     display: grid;
-    gap: 4rem;
+    gap: 6rem;
     perspective: 1000px;
 }
 
 .list-item {
     background: white;
-    padding: 4rem 4rem 4rem 6rem;
+    padding: 10rem 10rem 10rem 12rem;
     border-radius: 15px;
     box-shadow: 0 3px 15px rgba(0,0,0,0.1);
     position: relative;
     transition: all 0.3s ease;
     transform-style: preserve-3d;
     transform: rotate(-2deg);
-    font-size: 2rem;
-    font-weight: 600;
-    line-height: 1.8;
+    font-size: 8rem;
 }
 
 .list-item:hover {
@@ -106,13 +104,13 @@ h1 {
     transform: translateY(-50%);
     background: linear-gradient(45deg, var(--main-color), var(--secondary-color));
     color: white;
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.5rem;
+    font-size: 5rem;
     font-weight: bold;
     box-shadow: 0 3px 10px rgba(255,143,163,0.3);
     border: 2px solid white;
@@ -121,33 +119,33 @@ h1 {
 /* Mobile optimization */
 @media (max-width: 768px) {
     h1 {
-        font-size: 6rem; /* Reduced size for smaller headers on mobile */
+        font-size: 10rem;
     }
     .container {
-        padding: 0 20px;
+        padding: 0 30px;
         margin: 3rem auto;
     }
     .list-item {
-        padding: 4rem 3rem 4rem 5rem; /* Reduced padding for better fit */
-        font-size: 2rem; /* Larger text for better readability */
-        line-height: 1.8; /* Adjusted line spacing */
-        font-weight: 600; /* Made text slightly bolder */
+        padding: 12rem 12rem 12rem 14rem;
+        font-size: 8rem;
+        line-height: 3;
+        font-weight: 700;
     }
     .list-item::before {
-        left: -40px;
-        width: 70px;
-        height: 70px;
-        font-size: 2.5rem; /* Increased badge size slightly */
+        left: -60px;
+        width: 130px;
+        height: 130px;
+        font-size: 6rem;
     }
 }
 
 /* Extra small devices */
 @media (max-width: 375px) {
     .list-item {
-        font-size: 1.8rem; /* Larger font size for readability */
-        padding: 3rem 2rem 3rem 4rem;
+        font-size: 7rem;
+        padding: 10rem 10rem 10rem 12rem;
     }
     h1 {
-        font-size: 5rem; /* Slightly smaller heading */
+        font-size: 8rem;
     }
 }
