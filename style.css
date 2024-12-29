@@ -14,7 +14,7 @@ body {
     background-color: var(--bg-color);
     font-family: 'Quicksand', sans-serif;
     color: var(--text-color);
-    line-height: 1.6;
+    line-height: 1.8;
 }
 
 /* Cute floating hearts background */
@@ -42,7 +42,7 @@ body {
 
 header {
     background: linear-gradient(45deg, var(--main-color), var(--secondary-color));
-    padding: 2rem;
+    padding: 3rem;
     text-align: center;
     box-shadow: 0 4px 20px rgba(255,143,163,0.2);
     position: sticky;
@@ -53,7 +53,7 @@ header {
 h1 {
     color: white;
     font-family: 'Dancing Script', cursive;
-    font-size: 4rem;
+    font-size: 6rem;
     margin: 0;
     text-shadow: 3px 3px 6px rgba(0,0,0,0.1);
     transform: rotate(-2deg);
@@ -61,26 +61,26 @@ h1 {
 
 .container {
     max-width: 800px;
-    margin: 2rem auto;
+    margin: 3rem auto;
     padding: 0 20px;
 }
 
 .love-list {
     display: grid;
-    gap: 2rem;
+    gap: 3rem;
     perspective: 1000px;
 }
 
 .list-item {
     background: white;
-    padding: 4rem 4rem 4rem 4.5rem;
+    padding: 6rem 6rem 6rem 7rem;
     border-radius: 15px;
     box-shadow: 0 3px 15px rgba(0,0,0,0.1);
     position: relative;
     transition: all 0.3s ease;
     transform-style: preserve-3d;
     transform: rotate(-2deg);
-    font-size: 3rem;
+    font-size: 5rem;
 }
 
 .list-item:hover {
@@ -93,18 +93,18 @@ h1 {
 .list-item::before {
     content: attr(data-number);
     position: absolute;
-    left: -25px;
+    left: -35px;
     top: 50%;
     transform: translateY(-50%);
     background: linear-gradient(45deg, var(--main-color), var(--secondary-color));
     color: white;
-    width: 65px;
-    height: 65px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: bold;
     box-shadow: 0 3px 10px rgba(255,143,163,0.3);
     border: 2px solid white;
@@ -113,33 +113,33 @@ h1 {
 /* Mobile optimization */
 @media (max-width: 768px) {
     h1 {
-        font-size: 4.5rem;
+        font-size: 6rem;
     }
     .container {
         padding: 0 15px;
-        margin: 1rem auto;
+        margin: 2rem auto;
     }
     .list-item {
-        padding: 5rem 5rem 5rem 5.5rem;
-        font-size: 4rem;
-        line-height: 2.5;
+        padding: 7rem 7rem 7rem 8rem;
+        font-size: 6rem;
+        line-height: 3;
         font-weight: 700;
     }
     .list-item::before {
-        left: -30px;
-        width: 75px;
-        height: 75px;
-        font-size: 2.5rem;
+        left: -40px;
+        width: 100px;
+        height: 100px;
+        font-size: 3.5rem;
     }
 }
 
 /* Extra small devices */
 @media (max-width: 375px) {
     .list-item {
-        font-size: 3.5rem;
-        padding: 4rem 4rem 4rem 4.5rem;
+        font-size: 5rem;
+        padding: 6rem 6rem 6rem 7rem;
     }
     h1 {
-        font-size: 4rem;
+        font-size: 5rem;
     }
 }
