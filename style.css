@@ -1,104 +1,155 @@
 /* General styles */
 body {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 400;
-  margin: 0;
-  padding: 0;
-  background-color: #f7f2f2; /* light pink background */
+    font-family: 'Poppins', sans-serif; /* Modern and clean */
+    margin: 0;
+    padding: 0;
+    background-color: #fce4ec; /* Light rose background */
+    display: flex; /* Enable flexbox for centering */
+    flex-direction: column; /* Stack elements vertically */
+    min-height: 100vh; /* Ensure full viewport height */
 }
 
 .container {
-  width: 80%;
-  margin: 0 auto;
-  padding: 20px;
+    width: 80%;
+    max-width: 960px; /* Set a maximum width */
+    margin: 20px auto; /* Center the container */
+    padding: 20px;
+    flex: 1; /* Allow container to expand and fill available space */
+}
+
+/* Heading styles */
+h1 {
+    font-family: 'Pacifico', cursive; /* Playful and handwritten */
+    font-size: 3rem;
+    color: #d81b60; /* Deep pink heading */
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
 }
 
 /* Heart background animation */
 .heart-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1; /* Place behind other content */
+    overflow: hidden; /* Hide hearts that go outside the viewport */
 }
 
-.heart-bg::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background-color: rgba(255, 0, 128, 0.1); /* transparent pink */
-  animation: animateHeart 5s ease-in-out infinite;
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff4081; /* Hot pink hearts */
+    transform: rotate(45deg);
+    animation: float 10s linear infinite;
+    opacity: 0; /* Start invisible */
 }
 
-@keyframes animateHeart {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
+.heart::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #ff4081;
+    border-radius: 50%;
+}
+
+.heart::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    background-color: #ff4081;
+    border-radius: 50%;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, -100vh) rotate(45deg) scale(0);
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    75%{
+        opacity: 1;
+    }
+    100% {
+        transform: translate(calc(var(--random-x) * 100vw), 100vh) rotate(45deg) scale(1);
+        opacity: 0;
+    }
 }
 
 /* Love list styles */
 .love-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    grid-gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .list-item {
-  margin: 10px;
-  padding: 10px 20px;
-  border-radius: 20px;
-  background-color: #fff; /* white background for list items */
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* subtle shadow */
-  position: relative; /* for hover effects */
-  font-size: 16px;
-  line-height: 1.5;
-  transition: all 0.2s ease-in-out;
-}
-
-.list-item::after {
-  content: ""; /* add a heart after each list item */
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: #f00; /* light red heart */
-  opacity: 0;
-  transition: opacity 0.2s ease-in-out;
+    padding: 15px 25px;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: left; /* Align text to the left within list items */
+    font-family: 'Quicksand', sans-serif;
+    color: #4a148c; /* Dark purple text */
+    border: 2px solid transparent; /* Add transparent border for hover effect */
 }
 
 .list-item:hover {
-  transform: scale(1.05); /* slight zoom on hover */
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2); /* stronger shadow on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border-color: #ce93d8; /* Light purple border on hover */
 }
 
-.list-item:hover::after {
-  opacity: 1; /* show heart on hover */
+/* Add some random heart to the background */
+.heart:nth-child(1) {
+    --random-x: 0.1;
+    animation-delay: 1s;
 }
 
-/* Messy and girly text styles */
-.list-item,
-h1 {
-  font-family: 'Dancing Script', cursive;
-  font-weight: 700;
-  text-align: center;
-  color: #b3395a; /* light purple text */
+.heart:nth-child(2) {
+    --random-x: 0.3;
+    animation-delay: 3s;
 }
 
-h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
+.heart:nth-child(3) {
+    --random-x: 0.5;
+    animation-delay: 5s;
+}
+
+.heart:nth-child(4) {
+    --random-x: 0.7;
+    animation-delay: 2s;
+}
+
+.heart:nth-child(5) {
+    --random-x: 0.9;
+    animation-delay: 6s;
+}
+
+.heart:nth-child(n+6) {
+    --random-x: calc(0.1 + (0.1 * (var(--n) - 6)));
+    animation-delay: calc(var(--n) * 0.7s);
+    animation-duration: calc(10s + (var(--n) * 0.3s));
+}
+
+.heart:nth-child(n+6):nth-child(-n+15) {
+    --n: calc(var(--n) + 1);
 }
