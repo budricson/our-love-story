@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap');
 
 :root {
-    --main-color: #fdd7e4; /* Soft Lavender */
-    --secondary-color: #fce1ec; /* Baby Pink */
-    --accent-color: #fff0f5; /* Light Pink */
-    --bg-color: #fffafa; /* Off-White */
-    --text-color: #6a5acd; /* Light Slate Blue */
+    --main-color: #fdd7e4;
+    --secondary-color: #fce1ec;
+    --accent-color: #fff0f5;
+    --bg-color: #fffafa;
+    --text-color: #6a5acd;
 }
 
 body {
@@ -15,10 +15,9 @@ body {
     font-family: 'Quicksand', sans-serif;
     color: var(--text-color);
     line-height: 1.6;
-    overflow-x: hidden; /* Prevents horizontal scroll from animation */
+    overflow-x: hidden;
 }
 
-/* Cute floating hearts background (smaller, more numerous) */
 .heart-bg {
     position: fixed;
     top: 0;
@@ -26,14 +25,14 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    opacity: 0.2; /* Slightly more visible */
+    opacity: 0.2;
     background-image:
         radial-gradient(var(--main-color) 0.5px, transparent 1px),
         radial-gradient(var(--secondary-color) 0.5px, transparent 1px),
         radial-gradient(var(--accent-color) 1px, transparent 1.5px);
-    background-size: 20px 20px, 15px 15px, 25px 25px; /* Smaller hearts */
+    background-size: 20px 20px, 15px 15px, 25px 25px;
     background-position: 0 0, 7px 7px, 12px 12px;
-    animation: floatingHearts 30s linear infinite; /* Slower animation */
+    animation: floatingHearts 30s linear infinite;
 }
 
 @keyframes floatingHearts {
@@ -45,69 +44,71 @@ header {
     background: linear-gradient(45deg, var(--main-color), var(--secondary-color));
     padding: 1rem;
     text-align: center;
-    box-shadow: 0 4px 20px rgba(253, 215, 228, 0.3); /* Softer shadow */
+    box-shadow: 0 4px 20px rgba(253, 215, 228, 0.3);
     position: relative;
     z-index: 100;
 }
 
 h1 {
     color: white;
-    font-family: 'Pacifico', cursive; /* Curvier font */
-    font-size: 2.5rem; /* Slightly larger */
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
     margin: 0;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
 .container {
-    max-width: 800px;
-    margin: 2rem auto; /* More margin */
+    max-width: 90%;
+    margin: 3rem auto;
     padding: 0 20px;
 }
 
 .love-list {
     display: grid;
-    gap: 2rem; /* Increased gap */
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
     perspective: 1000px;
 }
 
 .list-item {
     background: white;
-    padding: 2rem; /* Increased padding */
-    border-radius: 20px; /* Rounder corners */
-    box-shadow: 0 4px 15px rgba(106, 90, 205, 0.2); /* Lavendar shadow */
+    padding: 2.5rem;
+    border-radius: 25px;
+    box-shadow: 0 5px 20px rgba(106, 90, 205, 0.2);
     position: relative;
-    transition: all 0.4s ease; /* Smoother transition */
+    transition: all 0.4s ease;
     transform-style: preserve-3d;
-    border: 1px solid var(--accent-color); /* Added border */
+    border: 1px solid var(--accent-color);
+    font-size: 1.2rem;
+    line-height: 1.8;
 }
 
 .list-item:hover {
-    transform: translateY(-8px) scale(1.03); /* More pronounced hover */
-    box-shadow: 0 6px 25px rgba(106, 90, 205, 0.3); /* Darker hover shadow */
+    transform: translateY(-10px) scale(1.04);
+    box-shadow: 0 8px 30px rgba(106, 90, 205, 0.3);
     background: linear-gradient(to right, white, var(--bg-color));
 }
 
 .list-item::before {
     content: attr(data-number);
     position: absolute;
-    left: -18px;
+    left: -20px;
     top: 50%;
     transform: translateY(-50%);
     background: linear-gradient(45deg, var(--main-color), var(--secondary-color));
     color: white;
-    width: 45px; /* Slightly bigger badge */
-    height: 45px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: bold;
-    box-shadow: 0 3px 12px rgba(253, 215, 228, 0.4);
+    box-shadow: 0 4px 15px rgba(253, 215, 228, 0.4);
     border: 2px solid white;
 }
 
-/* Fade in animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -121,37 +122,36 @@ h1 {
 
 .list-item {
     opacity: 0;
-    animation: fadeIn 0.7s ease forwards; /* Slightly slower fade-in */
+    animation: fadeIn 0.7s ease forwards;
 }
 
-/* Media Queries (Adjusted for larger sizes) */
-@media (max-width: 900px) { /* Slightly larger breakpoint */
-    h1 {
-        font-size: 2.2rem;
-    }
+@media (max-width: 768px) {
     .container {
         padding: 0 15px;
     }
-    .love-list {
-        gap: 1.5rem;
+    .list-item {
+        padding: 2rem;
+        font-size: 1.1rem;
+        line-height: 1.6;
     }
+    .list-item::before {
+        left: -15px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
     .list-item {
         padding: 1.5rem;
+        font-size: 1rem;
+        line-height: 1.4;
     }
     .list-item::before {
         left: -12px;
         width: 35px;
         height: 35px;
-        font-size: 1.2rem;
-    }
-}
-
-@media (max-width: 500px) { /* Smaller breakpoint */
-    h1 {
-        font-size: 1.8rem;
-    }
-    .list-item {
-        font-size: 1rem;
-        padding: 1.2rem;
+        font-size: 1.1rem;
     }
 }
