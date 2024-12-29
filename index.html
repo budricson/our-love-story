@@ -1,114 +1,162 @@
 <!DOCTYPE html>
-<html>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;700&family=Quicksand&display=swap" rel="stylesheet">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 Things I Love About My Girlfriend</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif; /* A clear, readable font */
+            background-color: #fce4ec; /* A soft pink background */
+            color: #333; /* Dark text for contrast */
+            line-height: 1.6; /* Improves readability */
+            padding: 20px;
+            margin: 0;
+            font-size: 1.2em; /* Makes the font bigger */
+        }
+
+        h1 {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #d81b60; /* A darker pink for the heading */
+            text-shadow: 2px 2px 4px #00000040; /* Add a subtle shadow */
+        }
+
+        ul {
+            list-style-type: none; /* Removes bullet points */
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+            grid-gap: 20px;
+        }
+
+        li {
+            background-color: #fff; /* White list items */
+            padding: 15px;
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            border: 2px dashed #ffb6c1; /* Light pink dashed border */
+        }
+        li:nth-child(even){
+          transform: rotate(2deg);
+        }
+        li:nth-child(odd){
+          transform: rotate(-1deg);
+        }
+        @media (max-width: 600px) {
+            body{
+                font-size: 1em;
+            }
+            h1{
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
 <body>
-    <div class="heart-bg"></div>
-    
-    <div class="container">
-        <div class="love-list">
-            <div class="list-item" data-number="1">How brave you are trying ice skating even when scared</div>
-            <div class="list-item" data-number="2">The way your whole face lights up when you dance</div>
-            <div class="list-item" data-number="3">Your cute little sips of chai latte</div>
-            <div class="list-item" data-number="4">How quickly you learn new games</div>
-            <div class="list-item" data-number="5">How elegant you look all dressed up</div>
-            <div class="list-item" data-number="6">The wonder in your eyes watching fireworks</div>
-            <div class="list-item" data-number="7">Your amazing Halloween costume ideas</div>
-            <div class="list-item" data-number="8">The way you always leave me your pizza crust</div>
-            <div class="list-item" data-number="9">Your creative side making clay figures and drawing</div>
-            <div class="list-item" data-number="10">How you tell people the way we met with a smile</div>
-            <div class="list-item" data-number="11">Sharing AirPods and your perfect song choices</div>
-            <div class="list-item" data-number="12">Your peaceful face during yoga</div>
-            <div class="list-item" data-number="13">How you turn working from home into pastry adventures</div>
-            <div class="list-item" data-number="14">The way you fall asleep on me on the night bus</div>
-            <div class="list-item" data-number="15">The joy in your eyes when I win a toy at the fair</div>
-            <div class="list-item" data-number="16">Your love of cats despite being allergic</div>
-            <div class="list-item" data-number="17">Your late-night McDonalds cravings</div>
-            <div class="list-item" data-number="18">The way you find every mirror for our selfies</div>
-            <div class="list-item" data-number="19">Your incredible artistic talent</div>
-            <div class="list-item" data-number="20">How focused you get while painting</div>
-            <div class="list-item" data-number="21">Your love for bao buns, sushi and sassy cider</div>
-            <div class="list-item" data-number="22">The way you sip soju like it's fancy wine</div>
-            <div class="list-item" data-number="23">How determined you was learning tennis</div>
-            <div class="list-item" data-number="24">Your graceful swimming</div>
-            <div class="list-item" data-number="25">Your determination learning to drive</div>
-            <div class="list-item" data-number="26">Your fearlessness climbing trees at Go Ape</div>
-            <div class="list-item" data-number="27">How patient you are when were taking photos</div>
-            <div class="list-item" data-number="28">The pure joy when you open presents</div>
-            <div class="list-item" data-number="29">The gentle way you fix my eyebrows</div>
-            <div class="list-item" data-number="30">Your passion for art exhibitions</div>
-            <div class="list-item" data-number="31">How supportive you are of my hobbies</div>
-            <div class="list-item" data-number="32">Your natural connection with dogs</div>
-            <div class="list-item" data-number="33">How that Jacquemus dress was made for you</div>
-            <div class="list-item" data-number="34">Looking for the perfect clover in a field</div>
-            <div class="list-item" data-number="35">How adorable you look in my clothes</div>
-            <div class="list-item" data-number="36">Your perfect sunglasses collection</div>
-            <div class="list-item" data-number="37">How you light up at live music</div>
-            <div class="list-item" data-number="38">The way you let me be your bodyguard</div>
-            <div class="list-item" data-number="39">Appreciating our hot water bottle routine</div>
-            <div class="list-item" data-number="40">Your eye for interior design</div>
-            <div class="list-item" data-number="41">Your unique way of pronouncing words</div>
-            <div class="list-item" data-number="42">How you make grammar corrections for me</div>
-            <div class="list-item" data-number="43">That gold dagger necklace you always wear</div>
-            <div class="list-item" data-number="44">Your love affair with rosé and breadsticks</div>
-            <div class="list-item" data-number="45">Being the perfect DJ on our drives</div>
-            <div class="list-item" data-number="46">How you make picnics feel magical</div>
-            <div class="list-item" data-number="47">Your competitive spirit in card games</div>
-            <div class="list-item" data-number="48">Your chess strategies irl</div>
-            <div class="list-item" data-number="49">Playing ping pong with two balls (chaos!)</div>
-            <div class="list-item" data-number="50">How naturally you connect with my mum</div>
-            <div class="list-item" data-number="51">Our shared struggle seeing far away without glasses</div>
-            <div class="list-item" data-number="52">Our matching toothbrushes</div>
-            <div class="list-item" data-number="53">When you give me your last chewing gum</div>
-            <div class="list-item" data-number="54">How perfectly you fit on my lap</div>
-            <div class="list-item" data-number="55">Your trust falls into my arms</div>
-            <div class="list-item" data-number="56">Our food adventures from pizza express to Wagamama</div>
-            <div class="list-item" data-number="57">Our perfectly aligned music taste</div>
-            <div class="list-item" data-number="58">Those burgundy nails you rock</div>
-            <div class="list-item" data-number="59">Your appreciation for fresh flowers</div>
-            <div class="list-item" data-number="60">Your carefully chosen jewelry</div>
-            <div class="list-item" data-number="61">Your Connect 4 victory dance</div>
-            <div class="list-item" data-number="62">That beautiful mind of yours</div>
-            <div class="list-item" data-number="63">The way you curl your hair</div>
-            <div class="list-item" data-number="64">Your openness to try anything once</div>
-            <div class="list-item" data-number="65">Your competitive mini golf spirit</div>
-            <div class="list-item" data-number="66">The way we dance with street performers</div>
-            <div class="list-item" data-number="67">Your spontaneous dance moves</div>
-            <div class="list-item" data-number="68">How you remember every song's meaning</div>
-            <div class="list-item" data-number="69">The way you create adventures everywhere</div>
-            <div class="list-item" data-number="70">When we smile at eachother for no reason</div>
-            <div class="list-item" data-number="71">How you make ordinary moments special</div>
-            <div class="list-item" data-number="72">Your perfect hugs</div>
-            <div class="list-item" data-number="73">The way you see beauty in everything</div>
-            <div class="list-item" data-number="74">When you tell me about your dreams each morning</div>
-            <div class="list-item" data-number="75">The letters you write for me</div>
-            <div class="list-item" data-number="76">Your thoughtful gift choices</div>
-            <div class="list-item" data-number="77">The way you care for others</div>
-            <div class="list-item" data-number="78">Your infectious enthusiasm</div>
-            <div class="list-item" data-number="79">How you make anywhere feel like home</div>
-            <div class="list-item" data-number="80">Your strength that inspires me</div>
-            <div class="list-item" data-number="81">The way you express your feelings</div>
-            <div class="list-item" data-number="82">Your endless creativity</div>
-            <div class="list-item" data-number="83">How you bring out my best</div>
-            <div class="list-item" data-number="84">Your determination to learn</div>
-            <div class="list-item" data-number="85">How you can make friends with anyone</div>
-            <div class="list-item" data-number="86">Your perfect timing</div>
-            <div class="list-item" data-number="87">How you make life an adventure</div>
-            <div class="list-item" data-number="88">The way you show love</div>
-            <div class="list-item" data-number="89">When we hold hands and people walk under us</div>
-            <div class="list-item" data-number="90">Your breakfast choice especially sweet chilli on halloumi</div>
-            <div class="list-item" data-number="91">The way you chase dreams</div>
-            <div class="list-item" data-number="92">Your genuine nature</div>
-            <div class="list-item" data-number="93">How you light up any room</div>
-            <div class="list-item" data-number="94">The way you see the world</div>
-            <div class="list-item" data-number="95">Your precious heart</div>
-            <div class="list-item" data-number="96">How we keep eachother hands warm</div>
-            <div class="list-item" data-number="97">The way you love deeply</div>
-            <div class="list-item" data-number="98">Your endless curiosity</div>
-            <div class="list-item" data-number="99">How you make every day better</div>
-            <div class="list-item" data-number="100">Simply being uniquely, perfectly you</div>
-        </div>
-    </div>
+    <h1>100 Things I Love About My Girlfriend</h1>
+    <ul>
+        <li>How brave you are trying ice skating even when scared</li>
+        <li>The way your whole face lights up when you dance</li>
+        <li>Your cute little sips of chai latte</li>
+        <li>How quickly you learn new games</li>
+        <li>How elegant you look all dressed up</li>
+        <li>The wonder in your eyes watching fireworks</li>
+        <li>Your amazing Halloween costume ideas</li>
+        <li>The way you always leave me your pizza crust</li>
+        <li>Your creative side making clay figures and drawing</li>
+        <li>How you tell people the way we met with a smile</li>
+        <li>Sharing AirPods and your perfect song choices</li>
+        <li>Your peaceful face during yoga</li>
+        <li>How you turn working from home into pastry adventures</li>
+        <li>The way you fall asleep on me on the night bus</li>
+        <li>The joy in your eyes when I win a toy at the fair</li>
+        <li>Your love of cats despite being allergic</li>
+        <li>Your late-night McDonalds cravings</li>
+        <li>The way you find every mirror for our selfies</li>
+        <li>Your incredible artistic talent</li>
+        <li>How focused you get while painting</li>
+        <li>Your love for bao buns, sushi and sassy cider</li>
+        <li>The way you sip soju like it's fancy wine</li>
+        <li>How determined you was learning tennis</li>
+        <li>Your graceful swimming</li>
+        <li>Your determination learning to drive</li>
+        <li>Your fearlessness climbing trees at Go Ape</li>
+        <li>How patient you are when were taking photos</li>
+        <li>The pure joy when you open presents</li>
+        <li>The gentle way you fix my eyebrows</li>
+        <li>Your passion for art exhibitions</li>
+        <li>How supportive you are of my hobbies</li>
+        <li>Your natural connection with dogs</li>
+        <li>How that Jacquemus dress was made for you</li>
+        <li>Looking for the perfect clover in a field</li>
+        <li>How adorable you look in my clothes</li>
+        <li>Your perfect sunglasses collection</li>
+        <li>How you light up at live music</li>
+        <li>The way you let me be your bodyguard</li>
+        <li>Appreciating our hot water bottle routine</li>
+        <li>Your eye for interior design</li>
+        <li>Your unique way of pronouncing words</li>
+        <li>How you make grammar corrections for me</li>
+        <li>That gold dagger necklace you always wear</li>
+        <li>Your love affair with rosé and breadsticks</li>
+        <li>Being the perfect DJ on our drives</li>
+        <li>How you make picnics feel magical</li>
+        <li>Your competitive spirit in card games</li>
+        <li>Your chess strategies irl</li>
+        <li>Playing ping pong with two balls (chaos!)</li>
+        <li>How naturally you connect with my mum</li>
+        <li>Our shared struggle seeing far away without glasses</li>
+        <li>Our matching toothbrushes</li>
+        <li>When you give me your last chewing gum</li>
+        <li>How perfectly you fit on my lap</li>
+        <li>Your trust falls into my arms</li>
+        <li>Our food adventures from pizza express to Wagamama</li>
+        <li>Our perfectly aligned music taste</li>
+        <li>Those burgundy nails you rock</li>
+        <li>Your appreciation for fresh flowers</li>
+        <li>Your carefully chosen jewelry</li>
+        <li>Your Connect 4 victory dance</li>
+        <li>That beautiful mind of yours</li>
+        <li>The way you curl your hair</li>
+        <li>Your openness to try anything once</li>
+        <li>Your competitive mini golf spirit</li>
+        <li>The way we dance with street performers</li>
+        <li>Your spontaneous dance moves</li>
+        <li>How you remember every song's meaning</li>
+        <li>The way you create adventures everywhere</li>
+        <li>When we smile at eachother for no reason</li>
+        <li>How you make ordinary moments special</li>
+        <li>Your perfect hugs</li>
+        <li>The way you see beauty in everything</li>
+        <li>When you tell me about your dreams each morning</li>
+        <li>The letters you write for me</li>
+        <li>Your thoughtful gift choices</li>
+        <li>The way you care for others</li>
+        <li>Your infectious enthusiasm</li>
+        <li>How you make anywhere feel like home</li>
+        <li>Your strength that inspires me</li>
+        <li>The way you express your feelings</li>
+        <li>Your endless creativity</li>
+        <li>How you bring out my best</li>
+        <li>Your determination to learn</li>
+        <li>How you can make friends with anyone</li>
+        <li>Your perfect timing</li>
+        <li>How you make life an adventure</li>
+        <li>The way you show love</li>
+        <li>When we hold hands and people walk under us</li>
+        <li>Your breakfast choice especially sweet chilli on halloumi</li>
+        <li>The way you chase dreams</li>
+        <li>Your genuine nature</li>
+        <li>How you light up any room</li>
+        <li>The way you see the world</li>
+        <li>Your precious heart</li>
+        <li>How we keep eachother hands warm</li>
+        <li>The way you love deeply</li>
+        <li>Your endless curiosity</li>
+        <li>How you make every day better</li>
+        <li>Simply being uniquely, perfectly you</li>
+    </ul>
 </body>
 </html>
