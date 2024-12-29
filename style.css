@@ -55,6 +55,17 @@ header::after {
     50% { transform: translateY(-20px) rotate(10deg); }
 }
 
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 h1 {
     color: white;
     font-size: 2.5rem;
@@ -85,6 +96,7 @@ h1 {
         transparent 8px,
         transparent 16px
     );
+    z-index: -1;
 }
 
 .timeline-item {
@@ -93,8 +105,6 @@ h1 {
     padding: 20px;
     margin: 50px 0;
     box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-    opacity: 0;
-    transform: translateY(20px);
     animation: fadeIn 0.5s ease forwards;
     position: relative;
 }
@@ -120,7 +130,18 @@ h1 {
     box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
 }
 
-/* Rest of your existing CSS stays the same, just update these specific styles for images */
+.content {
+    padding: 15px;
+}
+
+.polaroid-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0;
+}
+
 .content img:not(.text-screenshot) {
     width: 280px;
     height: 330px;
@@ -139,7 +160,15 @@ h1 {
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
-/* Add heart corners to text screenshots */
+/* Text messages styling */
+.text-messages-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
 .text-screenshot {
     width: 300px;
     border-radius: 15px;
@@ -169,4 +198,31 @@ h1 {
     font-size: 20px;
 }
 
-/* Keep your existing media queries */
+/* Responsive design */
+@media (max-width: 768px) {
+    .timeline {
+        padding: 10px;
+    }
+    
+    header {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+
+    .content img:not(.text-screenshot) {
+        width: 260px;
+        height: 310px;
+        margin: 5px;
+    }
+
+    .polaroid-container {
+        gap: 10px;
+    }
+
+    .text-screenshot {
+        width: 90%;
+    }
+}
