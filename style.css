@@ -160,26 +160,36 @@ h1 {
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
+.content img:not(.text-screenshot):nth-child(even) {
+    transform: rotate(3deg);
+}
+
 /* Text messages styling */
 .text-messages-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    margin-top: 30px;
+    justify-content: center;
+    margin: 40px auto;
+    max-width: 400px;
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 0.5s ease forwards;
 }
 
 .text-screenshot {
-    width: 300px;
+    width: 100%;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    margin: 15px 0;
     border: none !important;
     padding: 0 !important;
     transform: none !important;
     height: auto !important;
     background: transparent !important;
     position: relative;
+    transition: transform 0.3s ease;
+}
+
+.text-screenshot:hover {
+    transform: scale(1.05) !important;
 }
 
 .text-screenshot::before {
@@ -222,7 +232,7 @@ h1 {
         gap: 10px;
     }
 
-    .text-screenshot {
-        width: 90%;
+    .text-messages-container {
+        max-width: 90%;
     }
 }
