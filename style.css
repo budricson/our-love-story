@@ -163,7 +163,7 @@ h1 {
 /* Mobile optimization */
 @media (max-width: 768px) {
     h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
     }
     
     .container {
@@ -172,33 +172,33 @@ h1 {
     }
     
     .list-item {
-        padding: 1.8rem 1.8rem 1.8rem 2.2rem;
-        font-size: 1.3rem;
-        margin: 0 10px;
+        padding: 2rem 2rem 2rem 2.5rem;
+        font-size: 1.6rem;
+        margin: 0 15px;
         line-height: 1.8;
         font-weight: 500;
     }
     
     .list-item::before {
-        left: -15px;
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
+        left: -18px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.4rem;
     }
     
     .love-list {
-        gap: 2rem;
+        gap: 2.2rem;
     }
 }
 
 /* Extra small devices */
 @media (max-width: 375px) {
     .list-item {
-        font-size: 1.2rem;
-        padding: 1.5rem 1.5rem 1.5rem 2rem;
+        font-size: 1.5rem;
+        padding: 1.8rem 1.8rem 1.8rem 2.2rem;
     }
     
     h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
 }
