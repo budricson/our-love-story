@@ -1,91 +1,153 @@
-/* Variables */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap');
+
 :root {
-    --primary-color: #f8b6c4;
+    --main-color: #ff8fa3;
+    --secondary-color: #ffb3c1;
+    --accent-color: #ffd1d9;
+    --bg-color: #fff5f6;
     --text-color: #4a4a4a;
-    --font-family: 'Arial', sans-serif;
 }
 
-/* General Styles */
 body {
     margin: 0;
     padding: 0;
-    font-family: var(--font-family);
-    background: var(--primary-color);
+    background-color: var(--bg-color);
+    font-family: 'Quicksand', sans-serif;
+    color: var(--text-color);
+    line-height: 2.5;
 }
 
-/* Background Hearts Animation */
+/* Cute floating hearts background */
 .heart-bg {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #f8b6c4, #f78da7);
     z-index: -1;
+    opacity: 0.1;
+    background-image: 
+        radial-gradient(var(--main-color) 1px, transparent 2px),
+        radial-gradient(var(--secondary-color) 1px, transparent 2px),
+        radial-gradient(var(--accent-color) 2px, transparent 3px);
+    background-size: 40px 40px, 30px 30px, 50px 50px;
+    background-position: 0 0, 15px 15px, 25px 25px;
+    animation: floatingHearts 20s linear infinite;
 }
 
-/* Header */
+@keyframes floatingHearts {
+    0% { background-position: 0 0, 15px 15px, 25px 25px; }
+    100% { background-position: 40px 40px, 55px 55px, 65px 65px; }
+}
+
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    background: linear-gradient(135deg, #f78da7, #f8b6c4);
+    background: linear-gradient(45deg, var(--main-color), var(--secondary-color));
+    padding: 4rem;
     text-align: center;
+    box-shadow: 0 4px 20px rgba(255,143,163,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: 200px; /* Adjust to match the header height */
+}
+
+/* Adjust padding to prevent overlap */
+body {
+    padding-top: 200px; /* Same height as the header */
+}
+
+h1 {
     color: white;
-    font-size: 1.8em;
-    font-weight: bold;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Dancing Script', cursive;
+    font-size: 8rem;
+    margin: 0;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.1);
+    transform: rotate(-2deg);
 }
 
-/* Container */
 .container {
-    padding: 140px 20px 20px; /* Added padding-top to prevent overlap */
+    max-width: 1200px;
+    margin: 6rem auto;
+    padding: 0 40px;
 }
 
-/* Love List Items */
 .love-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: grid;
+    gap: 4rem;
+    perspective: 1000px;
 }
 
 .list-item {
-    position: relative;
-    padding: 15px;
     background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-size: 1em;
-    color: var(--text-color);
-    line-height: 1.5;
+    padding: 4rem 4rem 4rem 6rem;
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    position: relative;
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+    transform: rotate(-2deg);
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.8;
 }
 
+.list-item:hover {
+    transform: translateY(-5px) rotate(0deg) scale(1.02);
+    box-shadow: 0 5px 20px rgba(255,143,163,0.3);
+    background: linear-gradient(to right, white, var(--bg-color));
+}
+
+/* Cute number badges */
 .list-item::before {
     content: attr(data-number);
     position: absolute;
+    left: -50px;
     top: 50%;
-    left: -30px;
     transform: translateY(-50%);
-    background: var(--primary-color);
+    background: linear-gradient(45deg, var(--main-color), var(--secondary-color));
     color: white;
-    width: 25px;
-    height: 25px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    text-align: center;
-    line-height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
     font-weight: bold;
+    box-shadow: 0 3px 10px rgba(255,143,163,0.3);
+    border: 2px solid white;
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-    header {
-        font-size: 1.5em;
+/* Mobile optimization */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 6rem; /* Reduced size for smaller headers on mobile */
     }
-
+    .container {
+        padding: 0 20px;
+        margin: 3rem auto;
+    }
     .list-item {
-        font-size: 0.9em;
+        padding: 4rem 3rem 4rem 5rem; /* Reduced padding for better fit */
+        font-size: 2rem; /* Larger text for better readability */
+        line-height: 1.8; /* Adjusted line spacing */
+        font-weight: 600; /* Made text slightly bolder */
+    }
+    .list-item::before {
+        left: -40px;
+        width: 70px;
+        height: 70px;
+        font-size: 2.5rem; /* Increased badge size slightly */
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 375px) {
+    .list-item {
+        font-size: 1.8rem; /* Larger font size for readability */
+        padding: 3rem 2rem 3rem 4rem;
+    }
+    h1 {
+        font-size: 5rem; /* Slightly smaller heading */
     }
 }
